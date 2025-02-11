@@ -10,11 +10,11 @@ First set up your either your conda or pip env with pytorch>=2.0.0 and python>=3
 
 clone the repo and then install the mm libs here 
 
-''' 
+``` 
 pip install mmengine
 pip install mmdet
 pip install mmcv
-'''
+```
 
 after installing these run the setup.py script located in your cloned mmdet3d repo. 
 
