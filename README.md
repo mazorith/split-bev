@@ -18,6 +18,12 @@ pip install mmcv
 
 after installing these run the setup.py script located in your cloned mmdet3d repo. 
 
+```python3 setup.py install```
+
+or
+
+```python3 setup.py install --user```
+
 Some of the depences between these can be weird. If installing one dependancy reinstalls antoher mm lib version such that it overwrites the version you already installed try to reinstall it afterward. The core idea is that you need all mm libs compatable with the mmdet3d repo version you are cloning. This will take a bit of figuring out for your system as these repos have custom compiled code for pytorch and CUDA version.
 
 ### USE
