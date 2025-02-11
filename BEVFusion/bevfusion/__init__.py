@@ -13,6 +13,7 @@ from .utils import (BBoxBEVL1Cost, HeuristicAssigner3D, HungarianAssigner3D,
 from .bevfusion_split import BEVFusion_split
 from .split_modules import (SplitImageEncoder, SplitLidarEncoder, FuserNeck, FuserDecoder,
                             FuserNeck_entro, FuserDecoder_entro)
+from .bev_head import BEVSegmentationHead
 
 __all__ = [
     'BEVFusion', 'TransFusionHead', 'ConvFuser', 'ImageAug3D', 'GridMask',
@@ -22,5 +23,5 @@ __all__ = [
     'TransformerDecoderLayer', 'BEVFusionRandomFlip3D',
     'BEVFusionGlobalRotScaleTrans', "BEVFusion_split", "SplitImageEncoder", 
     "SplitLidarEncoder", "FuserNeck", "FuserDecoder", "Split_BEVFusionSparseEncoder",
-    "FuserNeck_entro", "FuserDecoder_entro"
+    "FuserNeck_entro", "FuserDecoder_entro", "BevSegmentationHead"
 ]

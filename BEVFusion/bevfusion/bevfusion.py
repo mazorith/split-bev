@@ -60,6 +60,8 @@ class BEVFusion(Base3DDetector):
 
         self.bbox_head = MODELS.build(bbox_head)
 
+        self.seg_head = MODELS.build(seg_head) if seg_head is not None else None
+
         self.init_weights()
 
     def _forward(self,
@@ -247,7 +249,11 @@ class BEVFusion(Base3DDetector):
         if self.with_bbox_head:
             outputs = self.bbox_head.predict(feats, batch_input_metas)
 
+        if self.with_seg_head:
+            outputs_seg = self.seg_head(feats)
+
         res = self.add_pred_to_datasample(batch_data_samples, outputs)
+        
 
         return res
 
@@ -322,6 +328,9 @@ class BEVFusion(Base3DDetector):
         losses = dict()
         if self.with_bbox_head:
             bbox_loss = self.bbox_head.loss(feats, batch_data_samples)
+
+        if self.with_seg_head:
+            seg_loss = self.seg_head.loss(feats, batch_data_samples)
 
         losses.update(bbox_loss)
 
